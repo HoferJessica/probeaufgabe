@@ -32,37 +32,46 @@
 <script src="core/version/version-directive.js"></script>
 <script src="core/version/interpolate-filter.js"></script>
 
+<div class="wrapper">
 
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+    <div class="subscribe">
+        <p>Subscribe now and get a <span>free</span> t-shirt directly in your inbox</p>
+    </div>
+
+    <div class="formWrapper">
+        <form name="subscriberForm" novalidate>
+            <input id="male" name="gender" ng-model="gender" type="radio" value="male" required/>
+            <label for="male">Male</label>
+            <input id="female" name="gender" ng-model="gender" type="radio" value="female" required=""/>
+            <label for="female">Female</label>
+            <input id="other" name="gender" ng-model="gender" type="radio" value="other" required/>
+            <label for="other">Other</label> <br/>
+            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.gender.$error.required">Required</p>
 
 
-<div>Subscribe now and get a free t-shirt directly in your inbox</div>
+            <label for="fname"> Firstname</label>
+            <input id="fname" name="fname" type="text" ng-model="fname" required>
+            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.fname.$error.required">Required</p>
 
-<div>
-    <form>
-        <label>
-            <input type="radio">Male</input>
-            <input type="radio">Female</input>
-            <input type="radio">Other</input>
-        </label><br/>
-        <label> Firstname <br/>
-            <input type="text">
-        </label><br/>
-        <label>Lastname <br/>
-        <input type="text">
-        </label><br/>
-        <label>Email <br/>
-            <input type="email">
-        </label><br/>
-        <label>
-            <input type="checkbox">
-        </label>I agree with the privacy policies</input> <br/>
-        <button>Subscribe</button>
-    </form>
+            <label for="lname">Lastname</label>
+            <input id="lname" name="lname" type="text" ng-model="lname" required>
+            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.lname.$error.required">Required</p>
+
+            <label for="email">Email </label>
+            <input id="email" type="email" name="email" ng-model="email" required>
+            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.email.$error.required">Required</p>
+            <p class="error" ng-show="subscriberForm.email.$error.email">Not a valid Email</p>
+
+
+            <input id="privacyCheck" name="privacyCheck" ng-model="privacyCheck" type="checkbox" required>
+            <label for="privacyCheck">I agree with the privacy policies</label> <br/>
+            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.privacyCheck.$error.required">Required</p>
+
+            <input type="submit" value="Subscribe" id="subscribe"/>
+
+        </form>
+    </div>
+
 </div>
-
 </body>
 </html>
