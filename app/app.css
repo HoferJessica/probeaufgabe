@@ -78,3 +78,29 @@ input[type=submit]{
     font-size: 3em;
   }
 }
+
+/***************
+Admin Page Styles
+***************** */
+
+h1 {
+  font-size: 4em;
+  margin: 5rem 0 0 5rem;
+  padding: 0;
+}
+
+#totalSubscriber {
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 10rem;
+  margin-bottom: 5rem;
+  text-align: right;
+}
+
+table{
+  width: 80%;
+  margin: auto;
+}
+
+table tr th {
+  color: rgba(0, 0, 0, 0.4);
+}
