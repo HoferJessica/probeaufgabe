@@ -9,11 +9,14 @@ html {
   margin: 20rem auto;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .subscribe {
   font-size: 4.8em;
+  padding: 0 3rem 0 3rem;
   width: 30%;
+  min-width: 300px;
 }
 
 .subscribe p span {
@@ -22,6 +25,7 @@ html {
 
 .formWrapper {
   width: 30%;
+  min-width: 300px;
 }
 
 form label {
@@ -35,8 +39,8 @@ input[type=radio] {
   margin-right: 0.4rem;
 }
 
-input[type=radio]:checked + *,
-input[type=checkbox]:checked + *{
+input[type=radio]:checked,
+input[type=checkbox]:checked {
   color: #66C39A;
 }
 
@@ -67,4 +71,10 @@ input[type=submit]{
 .error{
   font-size: 1em;
   color: red;
+}
+
+@media (max-width: 600px){
+  .subscribe {
+    font-size: 3em;
+  }
 }
