@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<!--<![endif]-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,14 +22,14 @@
 <body>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular-route/angular-route.js"></script>
-<script src="app.js"></script>
+<script src="admin.js"></script>
 <script src="view1/view1.js"></script>
 <script src="view2/view2.js"></script>
 <script src="core/version/version.js"></script>
 <script src="core/version/version-directive.js"></script>
 <script src="core/version/interpolate-filter.js"></script>
 
-<div>
+<div ng-controller="appController">
     <h1>Subscriber List</h1>
     <p id="totalSubscriber">Subscribers Total</p>
 
@@ -32,9 +41,15 @@
             <th>State</th>
             <th>Options</th>
         </tr>
-        <tr>
+        <tbody ng-repeat="user in users">
+            <tr>
+                <td>{{user.firstname}} {{user.lastname}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.state}}</td>
+            </tr>
+        </tbody>
 
-        </tr>
     </table>
 </div>
 

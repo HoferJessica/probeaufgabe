@@ -3,8 +3,6 @@
 // Declare app level module which depends on views, and core components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
   'myApp.version'
 ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
@@ -24,7 +22,7 @@ angular.module('myApp', [
     $scope.user = angular.copy($scope.originalUser)
 
     $scope.submitSubscriber = function () {
-      if($scope.user.gender === '' || $scope.user.fname === '' || $scope.user.lname ==='' || $scope.user.email ===''){
+      if ($scope.user.gender === '' || $scope.user.fname === '' || $scope.user.lname === '' || $scope.user.email === '') {
         return;
       }
 
@@ -40,7 +38,7 @@ angular.module('myApp', [
 
       $scope.saving = true;
       document.getElementById('subscribe').value = 'Loading';
-      $timeout ( function (){
+      $timeout(function () {
         $scope.saving = false;
         $scope.subscriberForm.$submitted = false;
         $scope.user = angular.copy($scope.originalUser);
@@ -50,7 +48,7 @@ angular.module('myApp', [
       fetch(url, {
         method: 'POST',
         body: JSON.stringify(body),
-        headers:{
+        headers: {
           'Content-Type': 'application/json'
         }
       })
