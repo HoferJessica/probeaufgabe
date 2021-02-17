@@ -38,37 +38,43 @@
         <p>Subscribe now and get a <span>free</span> t-shirt directly in your inbox</p>
     </div>
 
-    <div class="formWrapper">
-        <form name="subscriberForm" novalidate>
-            <input id="male" name="gender" ng-model="gender" type="radio" value="male" required/>
-            <label for="male">Male</label>
-            <input id="female" name="gender" ng-model="gender" type="radio" value="female" required=""/>
-            <label for="female">Female</label>
-            <input id="other" name="gender" ng-model="gender" type="radio" value="other" required/>
-            <label for="other">Other</label> <br/>
-            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.gender.$error.required">Required</p>
+    <div class="formWrapper" ng-controller="appController">
+        <form name="subscriberForm" novalidate ng-submit="submitSubscriber()">
+            <fieldset ng-disabled="saving">
+                <input id="male" name="gender" ng-model="user.gender" type="radio" value="male" required/>
+                <label for="male">Male</label>
+                <input id="female" name="gender" ng-model="user.gender" type="radio" value="female" required=""/>
+                <label for="female">Female</label>
+                <input id="other" name="gender" ng-model="user.gender" type="radio" value="other" required/>
+                <label for="other">Other</label> <br/>
+                <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.gender.$error.required">
+                    Required</p>
 
 
-            <label for="fname"> Firstname</label>
-            <input id="fname" name="fname" type="text" ng-model="fname" required>
-            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.fname.$error.required">Required</p>
+                <label for="fname"> Firstname</label>
+                <input id="fname" name="fname" type="text" ng-model="user.fname" required>
+                <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.fname.$error.required">
+                    Required</p>
 
-            <label for="lname">Lastname</label>
-            <input id="lname" name="lname" type="text" ng-model="lname" required>
-            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.lname.$error.required">Required</p>
+                <label for="lname">Lastname</label>
+                <input id="lname" name="lname" type="text" ng-model="user.lname" required>
+                <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.lname.$error.required">
+                    Required</p>
 
-            <label for="email">Email </label>
-            <input id="email" type="email" name="email" ng-model="email" required>
-            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.email.$error.required">Required</p>
-            <p class="error" ng-show="subscriberForm.email.$error.email">Not a valid Email</p>
+                <label for="email">Email </label>
+                <input id="email" type="email" name="email" ng-model="user.email" required>
+                <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.email.$error.required">
+                    Required</p>
+                <p class="error" ng-show="subscriberForm.email.$error.email">Not a valid Email</p>
 
 
-            <input id="privacyCheck" name="privacyCheck" ng-model="privacyCheck" type="checkbox" required>
-            <label for="privacyCheck">I agree with the privacy policies</label> <br/>
-            <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.privacyCheck.$error.required">Required</p>
+                <input id="privacyCheck" name="privacyCheck" ng-model="privacyCheck" type="checkbox" required>
+                <label for="privacyCheck">I agree with the privacy policies</label> <br/>
+                <p class="error" ng-show="subscriberForm.$submitted && subscriberForm.privacyCheck.$error.required">
+                    Required</p>
 
-            <input type="submit" value="Subscribe" id="subscribe"/>
-
+                <input type="submit" value="Subscribe" id="subscribe"/>
+            </fieldset>
         </form>
     </div>
 

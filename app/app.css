@@ -1,25 +1,70 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+html {
+  font-family: "Recursive Sans", sans-serif;
+  font-style: normal;
+  font-size: 62%;
 }
 
-.menu:before {
-  content: "[";
+.wrapper {
+  margin: 20rem auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.menu:after {
-  content: "]";
+.subscribe {
+  font-size: 4.8em;
+  width: 30%;
 }
 
-.menu > li {
-  display: inline;
+.subscribe p span {
+  color: #66C39A;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.formWrapper {
+  width: 30%;
+}
+
+form label {
+  padding: 2rem 3rem 2rem 0;
+  display: inline-block;
+  font-family: "Recursive Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.4)
+}
+
+input[type=radio] {
+  margin-right: 0.4rem;
+}
+
+input[type=radio]:checked + *,
+input[type=checkbox]:checked + *{
+  color: #66C39A;
+}
+
+input[type=radio]:checked + *::before{
+  border-color: #66C39A;
+}
+
+input[type=text], input[type=email] {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+input[type=checkbox]{
+  margin-right: 2rem;
+}
+
+input[type=submit]{
+  background: #66C39A;
+  color: #FFFFFF;
+  border: none;
+  width: 10rem;
+  height: 4rem;
+  border-radius: 1rem;
+  font-size: 1.2em;
+}
+
+.error{
+  font-size: 1em;
+  color: red;
 }
